@@ -123,4 +123,17 @@ ENV/
 pyvenv.cfg
 pip-selfcheck.json
 
-# End of https://www.gitignore.io/api/python,django,virtualenv
+### Vim ###
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+
