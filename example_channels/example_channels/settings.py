@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'example',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,11 @@ CHANNEL_LAYERS = {
         'ROUTING': 'example_channels.routing.channel_routing',
     }
 }
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'assets/bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'example/static/webpack-stats.json'),
+    }
+}
+
