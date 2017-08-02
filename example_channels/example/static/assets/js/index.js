@@ -6,7 +6,7 @@ var Hello = React.createClass({
     render: function(){
         return (
             <h1>
-            Hello, React!
+            Hello There World!
             </h1>
        )}
 })

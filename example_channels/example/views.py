@@ -6,9 +6,9 @@ from django.shortcuts import render, redirect
 User = get_user_model()
 
 def user_list(request):
-    users = User.objects.select_related('logged_in_user')
+    users = User.objects.select_related('account')
     for user in users:
-        user.status = 'Online' if hasattr(user, 'logged_in_user') else 'Offline'
+        user.status = 'Online' if user.account.logged_in else 'Offline'
     return render(request, 'example/user_list.html', {'users': users})
 
 def log_in(request):
