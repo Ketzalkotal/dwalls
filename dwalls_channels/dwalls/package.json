@@ -1,10 +1,10 @@
 {
-  "name": "example_channels",
+  "name": "dwalls_channels",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "directories": {
-    "example": "example"
+    "dwalls": "dwalls"
   },
   "scripts": {},
   "keywords": [],

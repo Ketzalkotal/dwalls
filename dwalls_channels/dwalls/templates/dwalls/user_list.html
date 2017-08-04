@@ -1,7 +1,7 @@
-{% extends 'example/_base.html' %}
+{% extends 'dwalls/_base.html' %}
 
 {% block content %}
-<a href="{% url 'example:log_out' %}">Log out</a>
+<a href="{% url 'dwalls:log_out' %}">Log out</a>
 
 <h3>User List</h3>
 {% for user in users %}

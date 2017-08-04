@@ -1,6 +1,6 @@
 from django.contrib.auth import user_logged_in, user_logged_out
 from django.dispatch import receiver
-from example.models.account import Account
+from dwalls.models.account import Account
 
 @receiver(user_logged_in)
 def on_user_login(sender, **kwargs):

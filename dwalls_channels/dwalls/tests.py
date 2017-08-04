@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.contrib.auth import get_user_model
-from example.signals import on_user_logout
+from dwalls.signals import on_user_logout
 
 class LogoutSignalTest(TestCase):
 

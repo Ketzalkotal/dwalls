@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from example.views import user_list, log_in, log_out, sign_up
+from dwalls.views import user_list, log_in, log_out, sign_up
 
 urlpatterns = [
     url(r'^log_in/$', log_in, name='log_in'),

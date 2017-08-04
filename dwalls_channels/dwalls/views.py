@@ -9,7 +9,7 @@ def user_list(request):
     users = User.objects.select_related('account')
     for user in users:
         user.status = 'Online' if user.account.logged_in else 'Offline'
-    return render(request, 'example/user_list.html', {'users': users})
+    return render(request, 'dwalls/user_list.html', {'users': users})
 
 def log_in(request):
     form = AuthenticationForm()
@@ -17,15 +17,15 @@ def log_in(request):
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect(reverse('example:user_list'))
+            return redirect(reverse('dwalls:user_list'))
         else:
             print(form.errors)
-    return render(request, 'example/log_in.html', {'form': form})
+    return render(request, 'dwalls/log_in.html', {'form': form})
 
 
 def log_out(request):
     logout(request)
-    return redirect(reverse('example:log_in'))
+    return redirect(reverse('dwalls:log_in'))
 
 def sign_up(request):
     form = UserCreationForm()
@@ -33,8 +33,8 @@ def sign_up(request):
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect(reverse('example:log_in'))
+            return redirect(reverse('dwalls:log_in'))
         else:
             print(form.errors)
-    return render(request, 'example/sign_up.html', {'form': form})
+    return render(request, 'dwalls/sign_up.html', {'form': form})
 
