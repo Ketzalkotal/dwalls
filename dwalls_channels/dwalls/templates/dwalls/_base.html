@@ -1,4 +1,4 @@
-{% load render_bundle from webpack_loader %} 
+{% load render_bundle from webpack_loader %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,13 +10,14 @@
 </head>
 <body>
   <div class="container">
+      <div id="container">
+      </div>
     <br>
     {% block content %}{% endblock content %}
   </div>
   <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
   {% block script %}{% endblock script %}
-  <div id="container">
-  </div>
+  <div id="header"></div>
 {% render_bundle 'main' %}
 </body>
 </html>

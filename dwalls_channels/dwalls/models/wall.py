@@ -1,6 +1,6 @@
-from django.conf import settings
 from django.db import models
 
 class Wall(models.Model):
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, related_name='logged_in_user')
+    route = models.SlugField(unique=True)
+    name = models.CharField(max_length=300, unique=True)
+    description = models.TextField()

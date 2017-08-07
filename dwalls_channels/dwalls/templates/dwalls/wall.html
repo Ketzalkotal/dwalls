@@ -1,0 +1,20 @@
+{% extends 'dwalls/_base.html' %}
+
+{% block content %}
+{#<a href="{% url 'dwalls:log_out' %}">Log out</a>#}
+
+{% endblock content %}
+
+
+{% block script %}
+<script>
+var Django = {
+    wall: "{{ wall }}",
+    posts: {{posts | safe}},
+    urls: {
+        log_out: "{% url 'dwalls:log_out' %}",
+        post: "{% url 'dwalls:post' wall=wall %}",
+    }
+}
+</script>
+{% endblock script %}

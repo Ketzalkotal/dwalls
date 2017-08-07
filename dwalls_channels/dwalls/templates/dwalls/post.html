@@ -1,0 +1,14 @@
+{% extends 'dwalls/_base.html' %}
+
+{% block content %}
+  <form action="{% url 'dwalls:post' wall=wall %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <div>
+        {{ field.label_tag }}
+        {{ field }}
+      </div>
+    {% endfor %}
+    <button type="submit">Submit</button>
+  </form>
+{% endblock content %}
