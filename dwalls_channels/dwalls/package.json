@@ -6,7 +6,10 @@
   "directories": {
     "dwalls": "dwalls"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch --color --progress"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",

@@ -198,3 +198,6 @@ typings/
 .env
 
 bundles/
+
+# Webpack
+webpack-stats.json
