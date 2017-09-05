@@ -33,7 +33,7 @@ module.exports = {
     },
 
     resolve: {
-        modules: ['node_modules'],
+        modules: ['node_modules', path.resolve('./static/assets/js') ],
         extensions: ['.js', '.jsx']
     }
     

@@ -1,5 +1,7 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import Counter from 'counter'
 
 import { createStore } from 'redux'
 
@@ -24,21 +26,7 @@ class Title extends React.Component {
     }
 }
 
-
 // function component
-
-const Counter = ({
-    like,
-    dislike,
-    id
-}) => (
-    <div className="vote">
-    <div><a onClick={voteLike}>▲</a></div>
-    <div>{like ? like: '0'}</div>
-    <div>{dislike ? dislike: '0'}</div>
-    <div><a onClick={voteDislike}>▼</a></div>
-    </div>
-);
 
 const Post = ({
     username,
@@ -111,25 +99,6 @@ const posts = (state = [], action) => {
 }
 
 const postStore = createStore(posts);
-
-// dispatchers
-function voteLike(id){
-    postStore.dispatch({
-        type: 'VOTE',
-        like: 1,
-        dislike: 0,
-        id: id
-    });
-}
-
-function voteDislike(id){
-    postStore.dispatch({
-        type: 'VOTE',
-        like: 0,
-        dislike: 1,
-        id: id
-    });
-}
 
 // render
 const render = () => {
