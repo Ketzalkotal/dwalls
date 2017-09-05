@@ -22,3 +22,9 @@ def ws_disconnect(message):
     })
     Group('users').discard(message.reply_channel)
 
+@channel_session_user
+def ws_receive(message, wallName):
+    Group(wallName).send({
+        "text": message.content['text'] + ' :' + wallName
+    })
+

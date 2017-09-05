@@ -7,6 +7,47 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <title>Example Channels</title>
+  <style>
+  * {box-sizing: border-box;}
+  .post-wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+  }
+
+  .post-wrapper > div {
+    border: 2px solid rgb(233,171,88);
+    border-radius: 5px;
+    background-color: rgba(233,171,88,.5);
+    padding: 1em;
+    color: #d9480f;
+  }
+  .post-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .post-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .posts-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .vote {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  .post-content {
+    grid-column: 2 / 8;
+    grid-row: 1;
+  }
+
+  </style>
 </head>
 <body>
   <div class="container">

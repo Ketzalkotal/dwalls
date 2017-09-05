@@ -59,6 +59,7 @@ def post(request, wall='all'):
                 realWall.save()
             post.wall = realWall
             post.save()
+            return redirect('/w/'+wall)
     else:
         form = PostForm()
     return render(request, 'dwalls/post.html', {'wall': wall, 'form': form})

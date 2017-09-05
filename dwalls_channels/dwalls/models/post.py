@@ -12,3 +12,6 @@ class Post(models.Model):
     url = models.URLField(blank=True, null=True)
     text = models.TextField(max_length=40000,blank=True, null=True)
     date = models.DateTimeField(auto_now=True, blank=True)
+    like = models.IntegerField(default=0)
+    dislike = models.IntegerField(default=0)
+
