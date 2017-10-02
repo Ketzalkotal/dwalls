@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 // dispatchers
 function voteLike(id){
@@ -19,8 +20,19 @@ function voteDislike(id){
     });
 }
 
+const wellStyles = {maxWidth: 400, margin: '0 auto 10px'};
+
+const buttonsInstance = (
+        <div className="well" style={wellStyles}>
+            <Button bsStyle="primary" bsSize="large" block>Like</Button>
+            <Button bsSize="large" block>Hate</Button>
+        </div>
+        );
+
+// <div><a onClick={voteLike}>▲</a></div>
+    //<Button bsStyle="primary" bsSize="large" block>Like</Button>
 // components
-const Counter = ({
+export const Counter = ({
     like,
     dislike,
     id
@@ -33,4 +45,3 @@ const Counter = ({
     </div>
 );
 
-export default Counter
