@@ -1,5 +1,7 @@
 from django.conf.urls import url
-from dwalls.views import user_list, log_in, log_out, sign_up, wall, post
+from dwalls.views.session import log_in, log_out, sign_up
+from dwalls.views.wall import wall
+from dwalls.views.post import post
 
 urlpatterns = [
     url(r'^log_in/$', log_in, name='log_in'),
@@ -8,5 +10,6 @@ urlpatterns = [
     url(r'^w/$', wall, name='wall'),
     url(r'^w/(?P<wall>.*)/post/$', post, name='post'),
     url(r'^w/(?P<wall>.*)/$', wall, name='wall'),
-    url(r'^$', user_list, name='user_list'),
+    url(r'^$', wall),
 ]
+

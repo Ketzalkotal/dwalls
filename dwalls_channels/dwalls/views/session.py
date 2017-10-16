@@ -9,12 +9,6 @@ from dwalls.forms import PostForm
 
 User = get_user_model()
 
-def user_list(request):
-    users = User.objects.select_related('account')
-    for user in users:
-        user.status = 'Online' if user.account.logged_in else 'Offline'
-    return render(request, 'dwalls/user_list.html', {'users': users})
-
 def log_in(request):
     form = AuthenticationForm()
     if request.method == 'POST':
@@ -40,27 +34,4 @@ def sign_up(request):
         else:
             print(form.errors)
     return render(request, 'dwalls/sign_up.html', {'form': form})
-
-def wall(request, wall='all'):
-    posts = serialize('json', Post.objects.filter(wall=Wall.objects.get(route=wall)))
-    return render(request, 'dwalls/wall.html', {'wall': wall, 'posts': posts})
-
-def post(request, wall='all'):
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            if not request.user.is_anonymous():
-                post.account = request.user.account
-            try:
-                realWall = Wall.objects.get(route=wall)
-            except:
-                realWall = Wall(route=wall, name=wall, description='')
-                realWall.save()
-            post.wall = realWall
-            post.save()
-            return redirect('/w/'+wall)
-    else:
-        form = PostForm()
-    return render(request, 'dwalls/post.html', {'wall': wall, 'form': form})
 
