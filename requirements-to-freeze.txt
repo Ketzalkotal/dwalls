@@ -1,0 +1,4 @@
+channels
+Django
+django-webpack-loader
+asgi_redis
